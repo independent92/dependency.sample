@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 
-
 @Service
 @Transactional
 public class AccountService extends AbstractUserDetailsAuthenticationProvider implements UserDetailsService {
@@ -83,9 +82,7 @@ public class AccountService extends AbstractUserDetailsAuthenticationProvider im
      */
     @Override
     protected UserDetails retrieveUser(String name, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-        UserDetails userDetails = loadUserByUsername(name);
-        userDetails.getAuthorities().size();
-        return userDetails;
+        return loadUserByUsername(name);
     }
 
     /**
